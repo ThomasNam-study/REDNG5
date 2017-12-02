@@ -11,16 +11,18 @@ import {
   selector : '[myTree]'
 })
 export class MyTreeDirective {
+
   template: TemplateRef<any> = null;
 
   depth = 0;
 }
 
 @Directive({
-  selector : '[myTreeNode]'
+  selector : '[treeNode]'
 })
 export class MyTreeNodeDirective implements OnChanges, DoCheck
 {
+  //
   @Input() treeNodeOf: any;
 
   private _differ: IterableDiffer<any> = null;

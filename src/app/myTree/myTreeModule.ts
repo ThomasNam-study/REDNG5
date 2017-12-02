@@ -4,6 +4,7 @@ import {MyTreeDirective, MyTreeNodeDirective, TreeChildren} from "./myTree.direc
 
 @NgModule({
   declarations: [MyTreeNodeDirective, MyTreeDirective, TreeChildren],
+  exports: [MyTreeNodeDirective, MyTreeDirective, TreeChildren],
   imports: [
     BrowserModule
   ],
