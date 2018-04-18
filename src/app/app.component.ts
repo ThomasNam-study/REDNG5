@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'app';
+
+  @ViewChild("myDiv") el: ElementRef;
+
+
 
   treeData = [
 
@@ -20,5 +24,20 @@ export class AppComponent {
       {name : "애플"},
       {name : "LG"},
     ]}
-  ]
+  ];
+
+
+
+
+  constructor(private renderer: Renderer2)
+  {
+
+  }
+
+  ngOnInit(): void {
+
+    this.renderer.setStyle(this.el.nativeElement, "backgound-color", "red");
+  }
+
+
 }
