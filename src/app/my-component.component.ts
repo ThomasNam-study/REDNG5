@@ -31,16 +31,7 @@ export class MyComponentComponent implements OnInit {
 
     let t = this.vcr.createComponent(f);
 
-
-
-    console.dir(t);
-
-
-
-
     t.instance.closeEvent.subscribe((r) => {
-      console.log ("Close!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
       t.destroy();
     });
 

@@ -1,0 +1,21 @@
+<p-panel header="Title">
+  Content
+</p-panel>
+
+<app-my-component></app-my-component>
+
+<ul myTree>
+  <li *treeNode="let item of treeData; let i = index; let d = depth">
+
+    <button (click)="item.hideChildren = !item.hideChildren">
+      +/-
+    </button>
+
+    <span>{{item.name}} - {{i}}, {{d}}</span>
+
+    <ul [hidden] = "item.hideChildren">
+      <tree-children [children] = "item.children"></tree-children>
+    </ul>
+
+  </li>
+</ul>
