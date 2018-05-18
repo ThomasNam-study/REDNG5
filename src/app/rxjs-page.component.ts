@@ -2,8 +2,15 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable, Subscribable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent'
 import 'rxjs/add/observable/interval'
+import 'rxjs/add/observable/of'
 import 'rxjs/add/operator/throttleTime'
+import 'rxjs/add/operator/debounceTime'
+import 'rxjs/add/operator/pluck'
+import 'rxjs/add/operator/distinctUntilChanged'
 import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/scan'
+import 'rxjs/add/operator/reduce'
+
 import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
 
@@ -106,5 +113,40 @@ export class RxjsPageComponent implements OnInit {
       this.mySubscript.unsubscribe();
 
     this.mySubscript = null;
+  }
+
+  onInput(event)
+  {
+    Observable.fromEvent(event.target, "input")
+      .pluck("target", "value")
+      .debounceTime(300)
+      .distinctUntilChanged ()
+      .subscribe((r) => {
+        console.log (event.target.value);
+      });
+  }
+
+  onReduce()
+  {
+    Observable.of(1, 2, 3, 4, 5)
+      .reduce((total, cv) => {
+
+        console.log ("total: " + total);
+        console.log ("cv:" + cv);;
+        return total + cv;
+      }, 0)
+      .subscribe((v) => console.log (v));
+  }
+
+  onScan()
+  {
+    Observable.of(1, 2, 3, 4, 5)
+      .scan((total, cv) => {
+
+        console.log ("total: " + total);
+        console.log ("cv:" + cv);;
+        return total + cv;
+      }, 0)
+      .subscribe((v) => console.log (v));
   }
 }

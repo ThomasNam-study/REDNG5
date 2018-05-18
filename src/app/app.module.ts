@@ -13,6 +13,7 @@ import {AppRoutingModule, appRoutingProviders} from "./app.routes";
 import { Page2Component } from './page2.component';
 import { RxjsPageComponent } from './rxjs-page.component';
 import { RxJsTestComponent } from './rx-js-test.component';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,9 @@ import { RxJsTestComponent } from './rx-js-test.component';
   ],
   imports: [
     BrowserModule, MyTreeModule,BrowserAnimationsModule, AppRoutingModule,
-    MatButtonModule, MatCheckboxModule
+    MatButtonModule, MatCheckboxModule, MatInputModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatInputModule],
   entryComponents : [ChildComponentComponent],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
