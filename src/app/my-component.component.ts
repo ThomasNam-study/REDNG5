@@ -1,6 +1,5 @@
 import {Component, ComponentFactoryResolver, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 import {ChildComponentComponent} from './child-component.component';
-import {Dialog} from 'primeng/dialog';
 
 @Component({
   selector: 'app-my-component',
