@@ -16,6 +16,7 @@ import { RxJsTestComponent } from './rx-js-test.component';
 import {MatInputModule} from '@angular/material/input';
 import { QrTestComponent } from './qr-test.component';
 import { QrOutputPipe } from './qr-output.pipe';
+import { RxInternalTestComponent } from './rx-internal-test.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { QrOutputPipe } from './qr-output.pipe';
     RxjsPageComponent,
     RxJsTestComponent,
     QrTestComponent,
-    QrOutputPipe
+    QrOutputPipe,
+    RxInternalTestComponent
   ],
   imports: [
     BrowserModule, MyTreeModule,BrowserAnimationsModule, AppRoutingModule,

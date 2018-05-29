@@ -6,13 +6,15 @@ import {Page2Component} from './page2.component';
 import {RxjsPageComponent} from './rxjs-page.component';
 import {RxJsTestComponent} from './rx-js-test.component';
 import {QrTestComponent} from './qr-test.component';
+import {RxInternalTestComponent} from './rx-internal-test.component';
 
 const introRouter: Routes = [
   {path: 'page1', component: Page1Component},
   {path: 'page2', component: Page2Component},
   {path: 'rxjs1', component: RxjsPageComponent},
   {path: 'rxjsTest', component: RxJsTestComponent},
-  {path: 'qrTest', component: QrTestComponent}
+  {path: 'qrTest', component: QrTestComponent},
+  {path: 'rxTest', component: RxInternalTestComponent},
 ];
 
 const appRouter: Routes = [...introRouter,];
